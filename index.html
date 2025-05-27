@@ -1,0 +1,430 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGOFIN - Smart Family Budget Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.03em;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: #ffffff;
+            color: #111111;
+        }
+
+        .elegant-button {
+            background-color: #000000;
+            transition: all 0.3s ease;
+            letter-spacing: 0.1em;
+        }
+
+        .elegant-button:hover {
+            background-color: #333333;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-item {
+            transition: all 0.3s ease;
+            border-left: 2px solid transparent;
+        }
+
+        .feature-item:hover {
+            border-left: 2px solid #000000;
+            transform: translateX(5px);
+        }
+
+        .form-container {
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-radius: 4px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .subtle-animation {
+            animation: subtleFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes subtleFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .uppercase-consistent {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .feature-icon svg {
+            width: 32px;
+            height: 32px;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-2{margin-left:0.5rem}.mr-3{margin-right:0.75rem}.mr-4{margin-right:1rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.block{display:block}.flex{display:flex}.grid{display:grid}.h-1{height:0.25rem}.h-3{height:0.75rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-8{height:2rem}.w-3{width:0.75rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-8{width:2rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-6xl{max-width:72rem}.flex-grow{flex-grow:1}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-4{gap:1rem}.gap-x-8{column-gap:2rem}.gap-y-12{row-gap:3rem}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-none{border-radius:0px}.rounded-sm{border-radius:0.125rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.text-center{text-align:center}.text-right{text-align:right}.text-2xl{font-size:1.5rem;line-height:2rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-light{font-weight:300}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.tracking-widest{letter-spacing:0.1em}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-80{opacity:0.8}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:border-black:focus{--tw-border-opacity:1;border-color:rgb(0 0 0 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-1:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-black:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(0 0 0 / var(--tw-ring-opacity, 1))}@media (min-width: 768px){.md\:mb-0{margin-bottom:0px}.md\:ml-2{margin-left:0.5rem}.md\:w-1\/2{width:50%}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:p-10{padding:2.5rem}.md\:p-8{padding:2rem}.md\:py-24{padding-top:6rem;padding-bottom:6rem}.md\:pr-12{padding-right:3rem}.md\:text-right{text-align:right}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-base{font-size:1rem;line-height:1.5rem}.md\:text-sm{font-size:0.875rem;line-height:1.25rem}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style></head>
+<body>
+    <!-- Header with ALGOFIN in top left -->
+    <header class="py-6 bg-white border-b border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-xl font-semibold uppercase-consistent tracking-widest">ALGOFIN</h1>
+                </div>
+                <div>
+                    <a href="#waitlist" class="elegant-button text-white text-xs uppercase-consistent py-2 px-6 rounded">
+                        JOIN WAITLIST
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 bg-black text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl uppercase-consistent font-light mb-6">ENJOY YOUR MONEY MORE BY MANAGING IT BETTER</h2>
+                <p class="text-sm md:text-base font-light mb-10 max-w-2xl mx-auto leading-relaxed">
+                    AI-POWERED FINANCIAL MANAGEMENT THAT HELPS YOUR FAMILY SAVE MORE, SPEND WISELY, AND BUILD WEALTH TOGETHER
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-xl md:text-2xl uppercase-consistent font-medium mb-4">WHAT ALGOFIN OFFERS</h2>
+                <p class="text-sm text-gray-600 max-w-3xl mx-auto">
+                    EVERYTHING YOUR FAMILY NEEDS TO TAKE CONTROL OF FINANCES AND BUILD WEALTH TOGETHER
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 max-w-6xl mx-auto">
+                <!-- Feature 1 -->
+                <div class="feature-item p-4">
+                    <div class="flex items-start">
+                        <div class="mr-4">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="black" stroke-width="1.5"></path>
+                                <path d="M15 7C17.2091 7 19 5.20914 19 3" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M2 21V19C2 16.7909 3.79086 15 6 15H12C14.2091 15 16 16.7909 16 19V21" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M18 14C20.2091 14 22 15.7909 22 18V21" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm uppercase-consistent font-medium mb-2">FAMILY-FIRST DESIGN</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Create family units, invite members, and manage income streams centrally for better financial coordination.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-item p-4">
+                    <div class="flex items-start">
+                        <div class="mr-4">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 21V7C7 5.89543 7.89543 5 9 5H19C20.1046 5 21 5.89543 21 7V15C21 16.1046 20.1046 17 19 17H9" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M17 9H11" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M17 13H13" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M3 15H9C10.1046 15 11 15.8954 11 17V19C11 20.1046 10.1046 21 9 21H3V15Z" stroke="black" stroke-width="1.5"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm uppercase-consistent font-medium mb-2">BANK INTEGRATION</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Connect to European banks with secure open banking, enabling automatic transaction import and categorization.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-item p-4">
+                    <div class="flex items-start">
+                        <div class="mr-4">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="9" stroke="black" stroke-width="1.5"></circle>
+                                <path d="M12 7V12L15 15" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm uppercase-consistent font-medium mb-2">SMART BUDGETING</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Follow 50/30/20 rules with multiple budget categories and intelligent alerts to stay on track.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-item p-4">
+                    <div class="flex items-start">
+                        <div class="mr-4">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="black" stroke-width="1.5"></path>
+                                <path d="M12 16V20" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M12 8V4" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M16 12H20" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M4 12H8" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M15.5 8.5L18.5 5.5" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M5.5 18.5L8.5 15.5" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M8.5 8.5L5.5 5.5" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M18.5 18.5L15.5 15.5" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm uppercase-consistent font-medium mb-2">AI FINANCIAL COACH</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Receive personalized insights on spending patterns, income optimization, and savings strategies.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-item p-4">
+                    <div class="flex items-start">
+                        <div class="mr-4">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 9H21" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M7 3V5" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M17 3V5" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M7 13H9" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M15 13H17" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M7 17H9" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M15 17H17" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <rect x="3" y="5" width="18" height="16" rx="2" stroke="black" stroke-width="1.5"></rect>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm uppercase-consistent font-medium mb-2">MONTHLY REPORTS</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Get comprehensive reports on savings progress, goals achieved, and discretionary funds available.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-item p-4">
+                    <div class="flex items-start">
+                        <div class="mr-4">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 8C20.6569 8 22 6.65685 22 5C22 3.34315 20.6569 2 19 2C17.3431 2 16 3.34315 16 5C16 6.65685 17.3431 8 19 8Z" stroke="black" stroke-width="1.5"></path>
+                                <path d="M5 22C6.65685 22 8 20.6569 8 19C8 17.3431 6.65685 16 5 16C3.34315 16 2 17.3431 2 19C2 20.6569 3.34315 22 5 22Z" stroke="black" stroke-width="1.5"></path>
+                                <path d="M19 8C19 12.4183 15.4183 16 11 16" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                                <path d="M5 16C5 11.5817 8.58172 8 13 8" stroke="black" stroke-width="1.5" stroke-linecap="round"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm uppercase-consistent font-medium mb-2">FLEXIBLE MANAGEMENT</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Transfer between budgets, set up recurring budgets, and receive smart low-balance alerts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-12">
+                    <h2 class="text-xl md:text-2xl uppercase-consistent font-medium mb-6">TAKE CONTROL OF YOUR FAMILY'S FINANCIAL FUTURE</h2>
+                    <p class="text-xs md:text-sm text-gray-600 mb-6 leading-relaxed">
+                        ALGOFIN combines proven financial methodologies with cutting-edge technology to help European families build wealth together.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 rounded-full bg-black flex items-center justify-center mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <span class="text-xs uppercase-consistent">REDUCE FINANCIAL STRESS WITH AUTOMATED TRACKING</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 rounded-full bg-black flex items-center justify-center mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <span class="text-xs uppercase-consistent">SAVE MORE WITH AI-POWERED RECOMMENDATIONS</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 rounded-full bg-black flex items-center justify-center mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <span class="text-xs uppercase-consistent">ACHIEVE FINANCIAL GOALS FASTER AS A FAMILY</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 subtle-animation">
+                    <div class="bg-white rounded-sm shadow-xl p-6 md:p-8 border border-gray-200">
+                        <div class="flex justify-between items-center mb-6">
+                            <div>
+                                <h3 class="text-sm uppercase-consistent font-medium">FAMILY BUDGET OVERVIEW</h3>
+                                <p class="text-xs text-gray-500">MONTHLY SUMMARY</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xs text-gray-500">BALANCE</p>
+                                <p class="text-lg font-medium">€3,240.50</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-6">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-xs uppercase-consistent">ESSENTIALS (50%)</span>
+                                    <span class="text-xs">€1,250 / €1,500</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-none h-1">
+                                    <div class="bg-black h-1" style="width: 83%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-xs uppercase-consistent">WANTS (30%)</span>
+                                    <span class="text-xs">€720 / €900</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-none h-1">
+                                    <div class="bg-black h-1" style="width: 80%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-xs uppercase-consistent">SAVINGS (20%)</span>
+                                    <span class="text-xs">€600 / €600</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-none h-1">
+                                    <div class="bg-black h-1" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-gray-50 border border-gray-200 mb-6">
+                            <div class="flex">
+                                <div class="mr-3 text-black">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs uppercase-consistent font-medium">AI INSIGHT</p>
+                                    <p class="text-xs text-gray-600">YOU COULD SAVE €120 MORE BY REDUCING RESTAURANT EXPENSES.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simplified Signup Form -->
+    <section id="waitlist" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-xl md:text-2xl uppercase-consistent font-medium mb-4">BE AMONG THE FIRST TO EXPERIENCE ALGOFIN</h2>
+                    <p class="text-xs md:text-sm text-gray-600">
+                        JOIN OUR WAITLIST TO RECEIVE EARLY ACCESS WHEN WE LAUNCH IN EUROPE.
+                    </p>
+                </div>
+
+                <div class="form-container p-8 md:p-10">
+                    <form id="waitlistForm" class="space-y-6">
+                        <div class="flex flex-col md:flex-row gap-4 items-end">
+                            <div class="flex-grow">
+                                <label for="email" class="block text-xs uppercase-consistent text-gray-700 mb-1">EMAIL ADDRESS*</label>
+                                <input type="email" id="email" required="" class="w-full px-4 py-2 text-sm rounded-none border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black focus:border-black" placeholder="YOUR@EMAIL.COM">
+                            </div>
+                            <button type="submit" class="elegant-button text-white text-xs uppercase-consistent py-2 px-8 rounded-none md:ml-2">
+                                JOIN THE WAITLIST
+                            </button>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="privacy" type="checkbox" checked="" class="h-4 w-4 text-black focus:ring-black border-gray-300">
+                            <label for="privacy" class="ml-2 block text-xs text-gray-700">
+                                I AGREE TO THE PRIVACY POLICY AND TERMS OF SERVICE
+                            </label>
+                        </div>
+                        <p class="text-xs text-gray-500 text-center">WE'LL NOTIFY YOU WHEN ALGOFIN LAUNCHES IN YOUR REGION.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-black text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-lg uppercase-consistent font-medium">ALGOFIN</h2>
+                    <p class="text-xs opacity-80 mt-1 uppercase-consistent">ENJOY YOUR MONEY MORE BY MANAGING IT BETTER</p>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-xs uppercase-consistent">© 2025 ALGOFIN. ALL RIGHTS RESERVED.</p>
+                    <p class="mt-2 text-xs opacity-80 uppercase-consistent">ALGOFIN.GR | COMING SOON</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form validation and submission
+        document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const privacy = document.getElementById('privacy').checked;
+
+            if (!email || !privacy) {
+                alert('Please fill in your email address and accept the privacy policy.');
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Success message (in a real scenario, this would send data to a server)
+            const form = document.getElementById('waitlistForm');
+            form.innerHTML = `
+                <div class="text-center py-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-black mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h3 class="text-lg uppercase-consistent font-medium mb-2">THANK YOU</h3>
+                    <p class="text-xs text-gray-600 uppercase-consistent">YOU'VE BEEN ADDED TO OUR WAITLIST. WE'LL NOTIFY YOU WHEN ALGOFIN LAUNCHES.</p>
+                </div>
+            `;
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'945b22a5b27c6f68',t:'MTc0ODI0MDA5OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+</body></html>
